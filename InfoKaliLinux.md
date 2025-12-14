@@ -239,4 +239,147 @@
 ---
 
 ## 17. Filesystem Mounting and Management
--
+- `mount /dev/sda1 /mnt` – Mount partition to a directory  
+- `umount /mnt` – Unmount a file system  
+- `/etc/fstab` – Persistent mount configuration file  
+- `blkid` – Display block device attributes  
+- `fsck /dev/sda1` – Check and repair filesystem  
+
+---
+
+## 18. Filesystem Permissions and Security
+- `chmod 755 file.txt` – Owner: read/write/execute, Others: read/execute  
+- `chown user:group file.txt` – Change owner and group of a file  
+- `chgrp group file.txt` – Change group ownership  
+- `umask 022` – Default permissions for new files (755)  
+- `setfacl` – Set access control lists (ACL)  
+- `getfacl` – Get access control lists (ACL)  
+
+---
+
+## 19. Containerization and Orchestration
+
+### Docker
+- `docker run <image>` – Run a container from an image  
+- `docker ps` – List running containers  
+- `docker ps -a` – List all containers (including stopped)  
+- `docker build -t <image_name> .` – Build an image from Dockerfile  
+- `docker exec -it <container_id> bash` – Shell inside container  
+- `docker stop <container_id>` – Stop a container  
+- `docker rm <container_id>` – Remove a container  
+- `docker logs <container_id>` – View container logs  
+- `docker images` – List images  
+- `docker rmi <image_name>` – Remove an image  
+- `docker network ls` – List Docker networks  
+- `docker-compose up` – Start multi-container environment  
+- `docker-compose down` – Stop/remove containers  
+- `docker-compose logs` – View logs  
+
+### Kubernetes
+- `kubectl get pods` – List pods  
+- `kubectl get nodes` – List nodes  
+- `kubectl get services` – List services  
+- `kubectl apply -f file.yaml` – Apply configuration  
+- `kubectl create -f file.yaml` – Create resource  
+- `kubectl delete -f file.yaml` – Delete resource  
+- `kubectl exec -it pod -- bash` – Shell inside pod  
+- `kubectl logs pod` – View pod logs  
+- `kubectl describe pod pod_name` – Pod details  
+- `kubectl scale deployment <name> --replicas=N` – Scale deployment  
+- `kubectl rollout restart deployment <name>` – Restart deployment  
+- `kubectl port-forward pod <pod> local:remote` – Forward port  
+
+### Helm
+- `helm install <release> <chart>` – Install chart  
+- `helm upgrade <release> <chart>` – Upgrade release  
+- `helm list` – List releases  
+- `helm delete <release>` – Delete release  
+- `helm search <chart>` – Search chart  
+
+---
+
+## 20. Automation and Configuration Management
+
+### Ansible
+- `ansible all -m ping` – Ping all hosts  
+- `ansible-playbook playbook.yml` – Run playbook  
+- `ansible -m command -a 'cmd' host` – Run command on host  
+- `ansible-playbook --check playbook.yml` – Dry-run playbook  
+- `ansible-playbook --limit host playbook.yml` – Run on specific host  
+- `ansible-playbook --extra-vars "key=value"` – Pass variables  
+
+### Terraform
+- `terraform init` – Initialize directory  
+- `terraform plan` – Preview changes  
+- `terraform apply` – Apply changes  
+- `terraform destroy` – Destroy infrastructure  
+- `terraform validate` – Validate configs  
+- `terraform show` – Show current state  
+
+### Puppet
+- `puppet apply manifest.pp` – Apply manifest locally  
+- `puppet agent --test` – Test Puppet agent  
+- `puppet resource` – Show current state of resources  
+
+---
+
+## 21. CI/CD Tools
+
+### Jenkins
+- `java -jar jenkins.war` – Start Jenkins  
+- Access Jenkins at `http://localhost:8080`  
+
+### GitLab CI
+- `.gitlab-ci.yml` – Pipeline config file  
+- `gitlab-runner register` – Register runner  
+- `gitlab-runner run` – Run jobs  
+
+### GitHub Actions
+- `.github/workflows/` – Workflow config files  
+- `actions/checkout@v2` – Checkout repo code  
+- `actions/setup-node@v2` – Setup Node.js  
+- `docker/setup-buildx-action@v1` – Setup Docker Buildx  
+
+---
+
+## 22. Cloud Services
+
+### AWS CLI
+- `aws configure` – Configure credentials  
+- `aws s3 cp file.txt s3://bucket` – Upload file to S3  
+- `aws ec2 describe-instances` – List EC2 instances  
+- `aws ec2 start-instances --instance-ids <id>` – Start EC2  
+- `aws ec2 stop-instances --instance-ids <id>` – Stop EC2  
+- `aws s3 sync local/ s3://bucket` – Sync directories  
+
+### Azure CLI
+- `az login` – Log in  
+- `az vm list` – List VMs  
+- `az vm start --name vm --resource-group group` – Start VM  
+- `az storage blob upload` – Upload to blob storage  
+- `az group create` – Create resource group  
+
+### Google Cloud SDK
+- `gcloud auth login` – Log in  
+- `gcloud compute instances list` – List instances  
+- `gcloud compute instances stop <name>` – Stop VM  
+- `gcloud app browse` – Open App Engine  
+
+---
+
+## 23. Logging and Monitoring
+
+### Prometheus
+- `prometheus` – Start server  
+- `prometheus --config.file=config.yml` – Start with config  
+
+### Grafana
+- `grafana-cli plugins install <plugin>` – Install plugin  
+
+### ELK Stack
+- `elasticsearch` – Start Elasticsearch  
+- `curl -XGET 'localhost:9200/_cluster/health?pretty'` – Cluster health  
+- `logstash -f config_file` – Run Logstash  
+- `kibana` – Start Kibana (http://localhost:5601)  
+
+---
